@@ -10,9 +10,20 @@
 <body>
     <?php
         include '../PHP/cnx.php';
+        $sql = $bdd->prepare("select numero, libelle from activite");
+        $sql->execute();
 
+        foreach($sql->fetchALL(PDO::FETCH_ASSOC) as $ligne)
+        {
+            echo "
+            <select>
+                <option></option>
+            </select>";
+            echo $ligne['numero']." ".$ligne['libelle']."<br>";
+            
+        }
         
     ?>
     
 </body>
-</html>>
+</html>
