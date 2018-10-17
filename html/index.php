@@ -8,6 +8,11 @@
     <script src="main.js"></script>
 </head>
 <body>
+    <?php
+        include '../PHP/cnx.php';
+
+        
+    ?>
     
 </body>
 </html>>
