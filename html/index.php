@@ -12,16 +12,15 @@
         include '../PHP/cnx.php';
         $sql = $bdd->prepare("select numero, libelle from activite");
         $sql->execute();
-   
-    ?>
 
-<select name=test_affichage_d_une_valeur>
-    <?php foreach($sql->fetchALL(PDO::FETCH_ASSOC) as $ligne){}?>
-    <option>
-        <?php echo $ligne["libelle"]?>
-    </option>
-    
-</select>
+        $test = "<select>";
+        
+        foreach($sql->fetchALL(PDO::FETCH_ASSOC) as $ligne){
+        $test .= "<option >{$ligne["libelle"]}</option>";
+        }
+        $test .="</select>";
+        echo $test;
+    ?>
 
 </body>
 </html>
