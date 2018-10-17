@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SNCF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <script src="../JQuery/jquery-3.1.1.js"></script>
+    <script src="../JS/mesfonctions.js"></script>
 </head>
 <body>
     <?php
@@ -13,13 +14,16 @@
         $sql = $bdd->prepare("select numero, libelle from activite");
         $sql->execute();
 
-        $test = "<select>";
+        $scrlBar = "<select onchange='mesfonctions.js'>";
+            foreach($sql->fetchALL(PDO::FETCH_ASSOC) as $ligne){
+            $scrlBar .= 
+                "<option value='{$ligne['libelle']}'>
+                    {$ligne['libelle']}
+                </option>";}
+        $scrlBar .="</select>";
+        echo $scrlBar;
         
-        foreach($sql->fetchALL(PDO::FETCH_ASSOC) as $ligne){
-        $test .= "<option >{$ligne["libelle"]}</option>";
-        }
-        $test .="</select>";
-        echo $test;
+
     ?>
 
 </body>
