@@ -13,7 +13,7 @@
         include '../PHP/cnx.php';
         $sql = $bdd->prepare("select numero, libelle from activite");
         $sql->execute();
-
+        
         $scrlBar = "<select onchange='mesfonctions.js'>";
             foreach($sql->fetchALL(PDO::FETCH_ASSOC) as $ligne){
             $scrlBar .= 
