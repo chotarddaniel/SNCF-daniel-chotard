@@ -10,20 +10,22 @@
 </head>
 <body>
     <?php
+
         include '../PHP/cnx.php';
+
         $sql = $bdd->prepare("select numero, libelle from activite");
         $sql->execute();
         
-        $scrlBar = "<select onchange='mesfonctions.js'>";
-            foreach($sql->fetchALL(PDO::FETCH_ASSOC) as $ligne){
-            $scrlBar .= 
-                "<option value='{$ligne['libelle']}'>
-                    {$ligne['libelle']}
-                </option>";}
-        $scrlBar .="</select>";
-        echo $scrlBar;
+        echo "<select  onclick=AfficherLesFormations()>";
+            foreach($sql->fetchALL(PDO::FETCH_ASSOC) as $ligne)
+            {
+            echo"<option name='num' value='".$ligne['numero']."'>".$ligne['libelle']."</option>";
+            }
+   
+        echo"</select>";
         
-
+        echo "<div id='divJeux'></div>"
+        
     ?>
 
 </body>
