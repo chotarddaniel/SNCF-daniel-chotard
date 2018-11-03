@@ -24,7 +24,7 @@
    
         echo"</select>";
         
-        echo "<div id='divJeux'></div>"
+        echo "<div id='divFormations'></div>"
         
     ?>
 

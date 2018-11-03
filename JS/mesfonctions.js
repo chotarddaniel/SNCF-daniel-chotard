@@ -9,8 +9,8 @@ function AfficherLesFormations()
             success:function(data)
             {
                 console.log("ca fonctionne");
-                $('#divJeux').empty();
-                $('#divJeux').append(data);
+                $('#divFormations').empty();
+                $('#divFormations').append(data);
                 
                 
             },
