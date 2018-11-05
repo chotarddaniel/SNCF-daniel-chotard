@@ -15,16 +15,18 @@
 
         $sql = $bdd->prepare("select numero, libelle from activite");
         $sql->execute();
-        
+    
         echo "<select  onclick=AfficherLesFormations()>";
             foreach($sql->fetchALL(PDO::FETCH_ASSOC) as $ligne)
             {
-            echo"<option name='num' value='".$ligne['numero']."'>".$ligne['libelle']."</option>";
+                echo"<option name='num' value='".$ligne['numero']."'>".$ligne['libelle']."</option>";
             }
    
         echo"</select>";
         
-        echo "<div id='divFormations'></div>"
+        echo "<div id='divFormations'></div>";
+
+       
         
     ?>
 

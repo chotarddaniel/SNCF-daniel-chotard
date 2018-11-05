@@ -10,4 +10,5 @@ foreach($sql->fetchAll(PDO::FETCH_ASSOC) as $ligne)
     echo "<p>".$ligne['intitule']."</p>";
 }
 
+
 ?>
