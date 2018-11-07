@@ -5,7 +5,8 @@ function AfficherLesFormations()
         {
             type:"get",
             url:"../PHP/getAllFormations.php",        
-            data:"num="+$('option[name=num]:checked').val(),
+            //data:"num="+$('option[name=num]:checked').val(),
+            data:"num="+$('#idformations').val(),
             success:function(data)
             {
                 console.log("ca fonctionne");

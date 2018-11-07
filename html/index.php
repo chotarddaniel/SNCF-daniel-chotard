@@ -16,7 +16,7 @@
         $sql = $bdd->prepare("select numero, libelle from activite");
         $sql->execute();
     
-        echo "<select  onclick=AfficherLesFormations()>";
+        echo "<select id=idformations onclick=AfficherLesFormations()>";
             foreach($sql->fetchALL(PDO::FETCH_ASSOC) as $ligne)
             {
                 echo"<option name='num' value='".$ligne['numero']."'>".$ligne['libelle']."</option>";
