@@ -14,6 +14,7 @@ foreach($sql2->fetchAll(PDO::FETCH_ASSOC) as $ligne)
     {
         echo "<table>";
         echo "<tr>";
+        echo "<td><input type='checkbox' name='test2'></td>";
         echo "<td>presence:".$ligne['presence']."</td>";
         echo "<td>".$ligne1['civilite']."</td>";
         echo "<td>".$ligne1['prenom']."</td>";
