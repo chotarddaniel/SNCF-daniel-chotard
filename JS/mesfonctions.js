@@ -48,3 +48,33 @@ function RadioLesFormations()
     );
     
 }
+
+function PresenceFormation()
+{
+    var tabAgents = array();
+    var tabPresent = array();
+    $('input[type=checkbox]').each
+    {(
+        function()
+        {
+            tabAgents.push($(this).val());
+            tabPresent.push($(this).is(':checked'));
+        }
+    )};
+    $.ajax
+    (
+        {
+            type:"get",
+            url:"PresenceFormation.php",        
+            data:"tab="+tabAgents+"&idFormations="+$('input[type=radio]:checked').val()+"&pres="+tabPresent,
+            success:function()
+            {
+                alert("ok");        
+            },
+            error:function()
+            {
+                
+            }
+        }
+    );
+}

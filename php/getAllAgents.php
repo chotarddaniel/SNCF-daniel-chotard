@@ -14,16 +14,17 @@ foreach($sql2->fetchAll(PDO::FETCH_ASSOC) as $ligne)
     {
         echo "<table>";
         echo "<tr>";
-        echo "<td><input type='checkbox' name='test2'></td>";
-        echo "<td>presence:".$ligne['presence']."</td>";
+        echo "<td><input type='checkbox' name='test2' value='".$ligne['codeAgent']."'></td>";
+        //echo "<td>presence:".$ligne['presence']."</td>";
         echo "<td>".$ligne1['civilite']."</td>";
         echo "<td>".$ligne1['prenom']."</td>";
         echo "<td>".$ligne1['nom']."</td>";
         
         echo "</tr>";
-
         echo "</table>";
     }
+    
 }
+echo "<input type='button' onclick=PresenceFormation() value='Valider presence'>";
 
 ?>
